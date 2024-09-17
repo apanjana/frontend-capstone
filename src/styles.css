@@ -11,3 +11,16 @@
 .container {
     margin: 0 auto;
 }
+
+body{
+  margin: 0px;
+  border: 0px;
+  background-image: url('/assets/bus-image.jpeg'); /* Path to your image */
+background-size: cover; /* Cover the entire container */
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Prevent repetition */
+min-height: 100vh; /* Ensure the background covers the viewport */
+padding: 20px;
+
+}
+
