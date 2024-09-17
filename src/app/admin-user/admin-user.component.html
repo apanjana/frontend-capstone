@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="user">
+    <section class="users">
+        <!-- <nav>
+            <a routerLink="/">Home</a> | 
+            <a routerLink="//bus">Bus Scedules</a>
+         </nav> -->
+        <h2>USERS</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.role }}</td>
+              <td>
+                <button (click)="manageUser(user.id)">Manage</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+</div>

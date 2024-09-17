@@ -1,0 +1,39 @@
+/* *{
+    margin: 10px;
+} */
+
+section {
+    margin: 30px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* table, th, td {
+    border: 1px solid #ddd;
+  } */
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #5d5c5c;
+    color: white;
+  }
+
+  /* tr:not(:first-child):hover { */
+  tr td:hover {
+    background-color: #f0f0f0; /* Slightly darken the row color */
+    transform: scale(1.02); /* Slightly enlarge the row */
+}
+
+/* To make the row slightly bigger on hover */
+tr:hover td {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}

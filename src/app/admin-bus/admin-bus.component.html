@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="bus">
+    <section class="bus-schedules">
+        <!-- <nav>
+            <a routerLink="/">Home</a> | 
+            <a routerLink="/user">Users</a>
+         </nav> -->
+        <h2>BUS SCHEDULES</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Route</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let bus of busSchedules">
+              <td>{{ bus.id }}</td>
+              <td>{{ bus.route }}</td>
+              <td>{{ bus.status }}</td>
+              <td>
+                <button (click)="updateBusSchedule(bus.id)">Update</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+</div>
