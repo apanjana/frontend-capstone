@@ -1,6 +1,6 @@
 /* Basic styling for the navbar */
 nav {
-    background-color: #333; /* Dark background for the navbar */
+    background-color: rgb(80, 96, 101, 0.9); /* Dark background for the navbar */
     padding: 10px;
     display: flex;
     justify-content: space-around; /* Distribute links evenly */
@@ -19,13 +19,13 @@ nav {
   }
   
   nav a:hover {
-    background-color: #555; /* Change background color on hover */
-    color: #ffcc00; /* Highlight color for the text on hover */
+    background-color: #4a4949; /* Change background color on hover */
+    color: rgb(239, 150, 116, 0.9); /* Highlight color for the text on hover */
     border-radius: 5px; /* Rounded corners on hover */
   }
   
   nav a.active {
-    background-color: #ffcc00; /* Highlight the active link */
+    background-color: #fff; /* Highlight the active link */
     color: #333; /* Dark text for the active link */
     border-radius: 5px;
   }

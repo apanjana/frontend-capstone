@@ -32,7 +32,7 @@
   }
   
   .dashboard a {
-    color: #1a73e8;
+    color: rgb(239, 150, 116);
     text-decoration: none;
     font-size: 18px;
     transition: font-size 0.3s ease, background-color 0.3s ease, color 0.3s ease;
@@ -41,6 +41,6 @@
   .dashboard a:hover {
     font-size: 20px; /* Slight increase in font size */
     /* background-color: #e0e0e0; */
-    color: #0c47a1;
+    color: rgb(239, 150, 116);
   }
   

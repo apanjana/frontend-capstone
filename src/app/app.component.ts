@@ -7,11 +7,12 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,CommonModule, NavbarUserComponent, AdminBusComponent, AdminMainPageComponent, AdminUserComponent,NavbarComponent],
+  imports: [RouterOutlet,ReactiveFormsModule,RouterLink,CommonModule, NavbarUserComponent, AdminBusComponent, AdminMainPageComponent, AdminUserComponent,NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

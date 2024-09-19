@@ -9,6 +9,7 @@ section {
   table {
     width: 100%;
     border-collapse: collapse;
+    background-color: rgb(83, 122, 140,0.5);
   }
 
   /* table, th, td {
@@ -33,7 +34,7 @@ section {
 
 /* To make the row slightly bigger on hover */
 tr:hover td {
-    background-color: #f0f0f0;
+    background-color: rgb(240, 240, 240, 0.8);
     transform: scale(1.02);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }

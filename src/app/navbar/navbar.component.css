@@ -1,6 +1,6 @@
 /* Basic styling for the navbar */
 nav {
-    background-color: #333; /* Dark background for the navbar */
+    background-color: rgb(51, 51, 51, 0.9); /* Dark background for the navbar */
     padding: 10px;
     display: flex;
     justify-content: space-around; /* Distribute links evenly */
