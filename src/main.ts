@@ -1,6 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+// import { bootstrapApplication } from '@angular/platform-browser';
+// import { AppComponent } from './app/app.component';
+// import { provideHttpClient } from '@angular/common/http';  
+
 // import * as THREE from 'three';
 // import VANTA from 'vanta/dist/vanta.dots.min';
 
@@ -18,6 +22,12 @@ import { AppComponent } from './app/app.component';
 //     backgroundColor: 0xccc8c8
 // });
 
+// bootstrapApplication(AppComponent, {
+//   providers: [
+//     provideHttpClient(),  // Add this to provide HttpClient in your application
+//   ]
+// })
+// .catch(err => console.error(err));
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));

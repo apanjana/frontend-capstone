@@ -5,8 +5,9 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserMainPageComponent } from './user-main-page/user-main-page.component';
+// import { LoginComponent } from './login/login.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+// import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 // export const routes: Routes = [
@@ -22,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // ];
 
 export const routes: Routes = [
+    // { path: '', component:LoginComponent },
     { path: '', component:LoginComponent },
     { path: 'admin', component:AdminMainPageComponent },
     { path: 'admin/bus', component:AdminBusComponent },
