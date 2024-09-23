@@ -8,6 +8,8 @@ import { UserMainPageComponent } from './user-main-page/user-main-page.component
 // import { LoginComponent } from './login/login.component';
 import { LoginComponent } from './login/login.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserBusPageComponent} from './user-bus-page/user-bus-page.component';
+import {UserBusBookComponent} from './user-bus-book/user-bus-book.component';
 
 
 // export const routes: Routes = [
@@ -29,6 +31,8 @@ export const routes: Routes = [
     { path: 'admin/bus', component:AdminBusComponent },
     { path: 'admin/user', component:AdminUserComponent},
     { path: 'user', component:UserMainPageComponent },
+    { path: 'user/bus', component:UserBusPageComponent},
+    { path: 'user/book', component:UserBusBookComponent}
 ];
 
 @NgModule({

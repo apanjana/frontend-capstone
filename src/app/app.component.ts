@@ -7,14 +7,26 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
-// import { ReactiveFormsModule } from '@angular/forms';
+import { UserBusPageComponent} from './user-bus-page/user-bus-page.component';
+import {UserBusBookComponent} from './user-bus-book/user-bus-book.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,CommonModule, NavbarUserComponent, AdminBusComponent, AdminMainPageComponent, AdminUserComponent,NavbarComponent],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    CommonModule,
+    NavbarUserComponent,
+    AdminBusComponent,
+    AdminMainPageComponent,
+    AdminUserComponent,
+    NavbarComponent,
+    UserBusPageComponent,
+    UserBusBookComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Change styleUrl to styleUrls
 })
 export class AppComponent {
   title = 'bus-transport-real';
