@@ -41,28 +41,38 @@ export class LoginComponent {
   }
 
   // Sign-in function
-  onSignIn() {
-    if (this.signInForm.valid) {
-      const formData = this.signInForm.value;
-      this.authService.authenticate(formData.email, formData.password).subscribe((response: any) => {
-        const token = response.token;
-        localStorage.setItem('authToken', token);
 
-        // Get user details after sign-in
-        this.authService.getUser(formData.email).subscribe(user => {
-          localStorage.setItem('user', JSON.stringify(user));
-          this.router.navigate(['/dashboard']); // Navigate to dashboard
-        });
-      }, error => {
-        console.error('Error during sign-in:', error);
-      });
-    } else {
-      console.log('Sign-in form is invalid');
-    }
+  onSignIn() {
+    const formData = this.signInForm.value;
+
+    this.authService.authenticate(formData.email,formData.password).subscribe((response: any) => {
+      console.log(response);
+
+      let token = response.token;
+      // Store the token in localStorage or sessionStorage
+      localStorage.setItem('authToken', token);
+
+      // get user data
+      this.authService.getUser(formData.email).subscribe( d => {
+        // localStorage.setItem("user",d)
+        // console.log(localStorage.getItem("user"))
+        // console.log("yoooo",localStorage)
+        localStorage.setItem("user", JSON.stringify(d));
+        // Retrieve and parse the string back into an object when needed
+        console.log(JSON.parse(localStorage.getItem("user") || '{}'));
+
+        console.log(localStorage.getItem("user"));
+
+      })
+
+
+      // Redirect to another component, e.g., the dashboard
+      this.router.navigate(["/user"]); // Change this to your target component
+    });
   }
 
   // Sign-up function
-  onSignUp() {
+  onSubmit() {
     if (this.signUpForm.valid) {
       const formData = this.signUpForm.value;
       this.http.post('http://localhost:9999/auth/signup', formData).subscribe(
@@ -75,6 +85,7 @@ export class LoginComponent {
         }
       );
     } else {
+      alert('Sign-up form is invalid')
       console.log('Sign-up form is invalid');
     }
   }
