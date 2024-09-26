@@ -1,30 +1,55 @@
 <app-navbar></app-navbar>
 <div class="bus">
-    <section class="bus-schedules">
-        <!-- <nav>
-            <a routerLink="/">Home</a> | 
-            <a routerLink="/user">Users</a>
-         </nav> -->
-        <h2>BUS SCHEDULES</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Route</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let bus of busSchedules">
-              <td>{{ bus.id }}</td>
-              <td>{{ bus.route }}</td>
-              <td>{{ bus.status }}</td>
-              <td>
-                <button (click)="updateBusSchedule(bus.id)">Update</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+  <section class="bus-schedules">
+    <h2>BUS SCHEDULES</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Bus Name</th>
+          <th>Capacity</th>
+          <th>Occupancy</th>
+          <th>Current Location</th>
+          <th>Is Operating</th>
+          <th>Scheduled Arrival Time</th>
+          <th>Actual Arrival Time</th>
+          <th>Routes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bus of busSchedules">
+          <td>{{ bus.id }}</td>
+          <td>{{ bus.busName }}</td>
+          <td>{{ bus.capacity }}</td>
+          <td>{{ bus.occupancy }}</td>
+          <td>{{ bus.currentLocation }}</td>
+          <td>{{ bus.isOperating }}</td>
+          <td>{{ bus.scheduledArrivalTime }}</td>
+          <td>{{ bus.actualArrivalTime }}</td>
+          <td>{{ bus.routes.join(', ') }}</td>
+          <td>
+            <button (click)="updateBusSchedule(bus.id)">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <h1>ADD A BUS</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="name">BUS NAME</label>
+    <input type="text" id="name" [(ngModel)]="bus.busName" name="busName" required>
+
+    <label for="capacity">CAPACITY</label>
+    <input type="text" id="capacity" [(ngModel)]="bus.capacity" name="capacity" required>
+
+    <label for="scheduledArrivalTime">SCHEDULED TIME</label>
+    <input type="text" id="scheduledArrivalTime" [(ngModel)]="bus.scheduledArrivalTime" name="scheduledArrivalTime" required>
+
+    <label for="routes">ROUTES</label>
+    <input type="text" id="routes" [(ngModel)]="bus.routes" name="routes" required>
+
+    <button type="submit">ADD BUS</button>
+  </form>
 </div>

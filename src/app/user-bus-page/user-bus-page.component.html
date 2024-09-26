@@ -27,12 +27,14 @@
 
   <hr>
 
-  <h2>Find Buses by Route</h2>
-  <input type="text" [(ngModel)]="route" placeholder="Enter route" class="route-input" />
-  <button class="btn-show-buses" (click)="getBusesByRoute()">Find Bus</button>
+  <!-- New inputs for start and end routes -->
+  <h2>Find Buses by Route Pattern</h2>
+  <input type="text" [(ngModel)]="startRoute" placeholder="Enter Start Route" class="route-input" />
+  <input type="text" [(ngModel)]="endRoute" placeholder="Enter End Route" class="route-input" />
+  <button class="btn-show-buses" (click)="getBusesByRoutePattern()">Find Buses</button>
 
   <div *ngIf="filteredBuses.length > 0">
-    <h3>Buses on Route {{ route }}</h3>
+    <h3>Buses from {{ startRoute }} to {{ endRoute }}</h3>
     <div class="bus-list">
       <div class="bus-card" *ngFor="let bus of filteredBuses">
         <strong>{{ bus.busName }}</strong>
@@ -49,7 +51,7 @@
     </div>
   </div>
 
-  <div *ngIf="filteredBuses.length === 0 && route">
-    <p>No buses available for route "{{ route }}".</p>
+  <div *ngIf="filteredBuses.length === 0 && startRoute && endRoute">
+    <p>No buses available from "{{ startRoute }}" to "{{ endRoute }}".</p>
   </div>
 </div>

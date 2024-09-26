@@ -3,39 +3,83 @@
 } */
 
 section {
-    margin: 30px;
-  }
+  margin: 30px;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: rgb(83, 122, 140,0.5);
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(83, 122, 140,0.5);
+}
 
-  /* table, th, td {
-    border: 1px solid #ddd;
-  } */
+/* table, th, td {
+  border: 1px solid #ddd;
+} */
 
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
+th, td {
+  padding: 8px;
+  text-align: left;
+}
 
-  th {
-    background-color: #5d5c5c;
-    color: white;
-  }
+th {
+  background-color: #5d5c5c;
+  color: white;
+}
 
-  /* tr:not(:first-child):hover { */
-  tr td:hover {
-    background-color: #f0f0f0; /* Slightly darken the row color */
-    transform: scale(1.02); /* Slightly enlarge the row */
+/* tr:not(:first-child):hover { */
+tr td:hover {
+  background-color: #f0f0f0; /* Slightly darken the row color */
+  transform: scale(1.02); /* Slightly enlarge the row */
 }
 
 /* To make the row slightly bigger on hover */
 tr:hover td {
-    background-color: rgb(240, 240, 240, 0.8);
-    transform: scale(1.02);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: rgb(240, 240, 240, 0.8);
+  transform: scale(1.02);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+form {
+display: flex;
+flex-direction: column;
+max-width: 400px;
+/* margin: 0 auto; */
+/* padding: 20px; */
+/* border: 1px solid #ccc; */
+/* border-radius: 10px; */
+/* background-color: #f9f9f9; */
+}
+
+label {
+margin-bottom: 8px;
+font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+margin-bottom: 16px;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+button {
+background-color: rgb(83, 122, 140);
+color: white;
+padding: 12px 20px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: rgb(235 151 115);
+}
+
+button:disabled {
+background-color: #ccc;
+cursor: not-allowed;
+}

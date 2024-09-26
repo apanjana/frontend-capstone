@@ -20,6 +20,20 @@ export class BusServiceService {
     const params = new HttpParams().set('route', route); // Set query parameter for route
     return this.http.get<any>(`${this.apiUrl}/route`, { params });
   }
+  getBuses(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+
+  addBus(bus: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, bus);
+  }
+
+  getBusesByRoutePattern(startRoute: string, endRoute: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/routes`, {
+      params: { startRoute, endRoute }
+    });
+  }
 
   // Other methods...
 }
