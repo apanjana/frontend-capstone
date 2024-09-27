@@ -12,6 +12,7 @@ import { UserBusPageComponent} from './user-bus-page/user-bus-page.component';
 import {UserBusBookComponent} from './user-bus-book/user-bus-book.component';
 
 
+
 // export const routes: Routes = [
 //     { path: '', component:AdminMainPageComponent },
 //     { path: 'bus', component:AdminBusComponent },
@@ -33,6 +34,8 @@ export const routes: Routes = [
     { path: 'user', component:UserMainPageComponent },
     { path: 'user/bus', component:UserBusPageComponent},
     { path: 'user/book', component:UserBusBookComponent}
+
+
 ];
 
 @NgModule({

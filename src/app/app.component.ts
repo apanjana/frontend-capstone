@@ -10,6 +10,7 @@ import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { UserBusPageComponent} from './user-bus-page/user-bus-page.component';
 import {UserBusBookComponent} from './user-bus-book/user-bus-book.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
