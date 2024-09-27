@@ -21,9 +21,10 @@ export class AuthService {
     return headers
   }
 
-  getUser(email: string): Observable<any>{
-    return this.http.get(`${this.url}/service_provider?role=USER&email=${email}`,{headers : this.getAuthHeader()})
+  getUser(email: string): Observable<any> {
+    return this.http.get(`${this.url}`, { headers: this.getAuthHeader() });
   }
+
 
   authenticate(email:string,password:string): Observable<any>{
     let cred = {

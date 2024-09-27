@@ -135,6 +135,8 @@ export class LoginComponent {
     });
   }
 
+
+
   // Sign-in function
   onSignIn() {
     if (this.signInForm.valid) {
@@ -145,26 +147,40 @@ export class LoginComponent {
         // Store the token in localStorage or sessionStorage
         localStorage.setItem('authToken', token);
 
-        // Get user data
+        // Correct URL endpoint - removing the role if it's unnecessary
         this.authService.getUser(formData.email).subscribe(user => {
-          // Store user data
           localStorage.setItem("user", JSON.stringify(user));
+            console.log(user);
 
-          // Check user role and navigate accordingly
-          const userRole = user.role; // Assuming the response includes a role field
+        let userRole = user.role;
+
+        user.forEach((element : any) => {
+          if(element.email === formData.email) {
+              userRole = element.role;
+              console.log('Adding local storage');
+            localStorage.setItem("username" , element.username);
+          }
+        });
+
+          // Check us er role and navigate accordingly
+
           if (userRole === 'ADMIN') {
             this.router.navigate(['/admin']); // Navigate to admin dashboard
           } else {
             this.router.navigate(['/user']); // Navigate to user dashboard
           }
+        }, error => {
+          console.error('Error fetching user data:', error);
         });
       }, error => {
         console.error('Error during sign-in:', error);
+        alert('Invalid credentials. Please try again.');
       });
     } else {
       console.log('Sign-in form is invalid');
     }
   }
+
 
   // Sign-up function
   onSubmit() {
